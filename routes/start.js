@@ -18,4 +18,8 @@ router.get('/tictactoe', function(req, res, next) {
     res.render('tictactoe', { title: 'Express' });
 });
 
+router.get('/acceleration', function(req, res, next) {
+    res.render('acceleration', { title: 'Express' });
+});
+
 module.exports = router;
