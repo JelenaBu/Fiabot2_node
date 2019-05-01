@@ -14,4 +14,8 @@ router.get('/wheel', function(req, res, next) {
     res.render('wheel', { title: 'Express' });
 });
 
+router.get('/tictactoe', function(req, res, next) {
+    res.render('tictactoe', { title: 'Express' });
+});
+
 module.exports = router;
