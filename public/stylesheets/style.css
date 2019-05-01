@@ -30,6 +30,17 @@ div {
   display: inline-block;
   color: white;
 }
+.fiabot {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
+  color: white;
+}
 
 .mybtn:hover {background: #bfbfbf;}
 
