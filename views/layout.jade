@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Jelena Budakovic')
+    title Fiabot! 2.0
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+  body
+    //Navigation
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand(href='#') Fiabot! 2.0
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li
+              form(action='/', method='GET')
+                button.mybtn(type='submit') Home
+            li
+              form(action='/about', method='GET')
+                button.mybtn(type='submit') About
+            li
+              form(action='/contact', method='GET')
+                button.mybtn(type='submit') Contact
+    block content
+  footer#sticky-footer.py-4.bg-dark.text-white-50(style='bottom:0;position:absolute;left:0;right:0;')
+    .container.text-center
+      small © 2019 Copyright: Jelena Budakovic
+
+      // Bootstrap core JavaScript
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  //script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery-3.3.1.slim.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js')
+  //script(src='../javascript/app.js')

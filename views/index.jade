@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  body.bgimg
+    // Page Content
+    section.py-5
+      .container
+        p.lead
+          | Fiabot! 2.0 is a revised version of
+          a(href='http://www.rubegni.it/fiabotGender/fiabotGender/afterLogin.html') Fiabot!
+          | .
+        form(action='/start', method='GET')
+            button.mybtnstart(type='submit') Get started
