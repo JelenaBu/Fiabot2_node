@@ -6,6 +6,11 @@ router.get('/', function(req, res, next) {
     res.render('start', { title: 'Express' });
 });
 
+router.get('/characteristics', function(req, res, next) {
+    res.render('characteristics', { title: 'Express' });
+});
+
+// TODO: put games as "/games/..."
 router.get('/memory', function(req, res, next) {
     res.render('memory', { title: 'Express' });
 });
@@ -20,10 +25,6 @@ router.get('/tictactoe', function(req, res, next) {
 
 router.get('/acceleration', function(req, res, next) {
     res.render('acceleration', { title: 'Express' });
-});
-
-router.get('/characteristics', function(req, res, next) {
-    res.render('characteristics', { title: 'Express' });
 });
 
 module.exports = router;

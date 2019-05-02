@@ -9,6 +9,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* Main page*/
 .bgcolor {
   background-color: #e6e6e6;
 }
@@ -62,7 +64,9 @@ div {
 }
 .mybtnstart:hover {background: #bfbfbf;}
 
-/* Characteristics file*/
+/* Characters page*/
+
+/* Characteristics page*/
 .btncaract {
   border: none;
   background-color: inherit;
@@ -122,3 +126,7 @@ div {
 .cursor{
   cursor: pointer;
 }
+
+/* Places page*/
+
+/* Tests page*/
