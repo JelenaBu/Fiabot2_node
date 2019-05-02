@@ -80,6 +80,7 @@ div {
 .btncaract:hover {background: #bfbfbf;}
 
 .carTitle {
+  text-align: center;
   font-size: 50px;
   color: #dcd0bc;
   font-weight: bold;
@@ -128,5 +129,11 @@ div {
 }
 
 /* Places page*/
-
+.wheelTitle{
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 /* Tests page*/
