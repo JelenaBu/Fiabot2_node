@@ -1,0 +1,76 @@
+extends layout
+block content
+   body.bgcolor
+    p.carTitle Caratteristiche
+    p
+      | Scegliete 4 caratteristiche per il vostro
+      b  protagonista
+      | .
+      |     Una volta fatto, lanciate la moneta dei contrari. Se vi uscirà la scritta "Uguale" otterrete le caratteristiche che avete selezionato, se invece vi uscirà "Contrari" allora dovrete utilizzare i loro contrari.
+    form(action='/action_page.php')
+      .container
+        div(style='width: 12em; float: left;')
+          input(type='checkbox', name='Bello', value='Bello')
+          |  Bello
+          br
+          input(type='checkbox', name='Muscoloso', value='Muscoloso')
+          |  Muscoloso
+          br
+          input(type='checkbox', name='Pigro', value='Pigro')
+          |  Pigro
+          br
+          input(type='checkbox', name='Umile', value='Umile')
+          |  Umile
+          br
+          input(type='checkbox', name='Avaro', value='Avaro')
+          |  Avaro
+          br
+        div(style='width: 12em; float: left;')
+          input(type='checkbox', name='Sensibile', value='Sensibile')
+          |  Sensibile
+          br
+          input(type='checkbox', name='Caritatevole', value='Caritatevole')
+          |  Caritatevole
+          br
+          input(type='checkbox', name='Debole', value='Debole')
+          |  Debole
+          br
+          input(type='checkbox', name='Lento', value='Lento')
+          |  Lento
+          br
+          input(type='checkbox', name='Intelligente', value='Intelligente')
+          |  Intelligente
+          br
+        div(style='width: 12em; float: left;')
+          input(type='checkbox', name='Impaziente', value='Impaziente')
+          |  Impaziente
+          br
+          input(type='checkbox', name='Presuntuoso', value='Presuntuoso')
+          |  Presuntuoso
+          br
+          input(type='checkbox', name='Simpatico', value='Simpatico')
+          |  Simpatico
+          br
+          input(type='checkbox', name='Prudente', value='Prudente')
+          |  Prudente
+          br
+          input(type='checkbox', name='Generoso', value='Generoso')
+          |  Generoso
+          br
+        br
+        br
+        br
+        br
+        br
+        br
+      input.cursor(type='submit', value='Conferma')
+    p Avete selezionato:
+    .div
+      p
+        | Adesso scoprite se otterrete le caratteristiche che avete selezionato oppure i loro contrari:
+      .wrapper
+        .column
+          #dice-side-1.dice
+        .column2
+          button.dice-roll(type='button') Lancia la moneta
+          h2#status Avete ottenuto....

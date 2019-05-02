@@ -22,4 +22,8 @@ router.get('/acceleration', function(req, res, next) {
     res.render('acceleration', { title: 'Express' });
 });
 
+router.get('/characteristics', function(req, res, next) {
+    res.render('characteristics', { title: 'Express' });
+});
+
 module.exports = router;

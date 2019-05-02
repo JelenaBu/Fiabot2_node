@@ -9,6 +9,10 @@ body {
 a {
   color: #00B7FF;
 }
+.bgcolor {
+  background-color: #e6e6e6;
+}
+
 .bgimg {
   background-image: url('../images/Storytelling.jpg');
   background-position: center;
@@ -21,6 +25,7 @@ div {
   justify-content: center;
   align-items: center;
 }
+
 .mybtn {
   border: none;
   background-color: inherit;
@@ -30,6 +35,9 @@ div {
   display: inline-block;
   color: white;
 }
+
+.mybtn:hover {background: #bfbfbf;}
+
 .fiabot {
   border: none;
   background-color: inherit;
@@ -42,8 +50,6 @@ div {
   color: white;
 }
 
-.mybtn:hover {background: #bfbfbf;}
-
 .mybtnstart {
   border: solid;
   background-color: inherit;
@@ -54,5 +60,65 @@ div {
   color: black;
   font-weight: bold;
 }
-
 .mybtnstart:hover {background: #bfbfbf;}
+
+/* Characteristics file*/
+.btncaract {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+}
+
+.btncaract:hover {background: #bfbfbf;}
+
+.carTitle {
+  font-size: 50px;
+  color: #dcd0bc;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.wrapper {
+  justify-content: space-between;
+}
+
+.column2 {
+  align-items: center;
+  width: 400px;
+  left: 50%;
+  transform: translateX(40%);
+}
+
+.status {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 400px;
+  margin: 0;
+  text-align: center;
+}
+
+.dice {
+  width: 120px;
+  float: left;
+  /*background-color: #dcd0bc;*/
+  content: url("../images/moneta.png");
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.dice-roll {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.cursor{
+  cursor: pointer;
+}
