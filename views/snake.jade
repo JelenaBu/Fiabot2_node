@@ -1,0 +1,19 @@
+extends layout
+block content
+    p.gameTitle Minigioco 3 - Snake
+    p Controlla la direzione del movimento del serpente facendo in modo che questo mangi il cibo che trova all’interno del recinto. Ogni volta che il serpente mangia ingrassa e quindi si allunga. Lo scopo del gioco e' riuscire a mangiare il cibo senza uccidere il serpente o toccare le pareti del recinto. Vinci il gioco se ottieni un punteggio minimo di 160 punti.
+    div.center
+        div
+            canvas#gameCanvasSnake(width='300', height='300')
+        div
+            #score 0
+            button.newGameSnake(type='button' onclick='main()') INIZIA
+
+    form(action='/start/places', method='GET')
+        button.nextButton(type='submit', disabled='') Avanti
+    style.
+        #score {
+            text-align: center;
+            font-size: 100px;
+            font-family: 'Antic Slab', serif;
+        }

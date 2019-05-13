@@ -86,3 +86,18 @@ function checkstatusAcceleration(score) {
     //Disable new game button
     $('button.newGame').prop('disabled', true);
 }
+
+function checkstatusSnake(score) {
+    if (score >= 160){
+        console.log("Score obtained: " + score + "therefore, you " + "WINNED");
+        updateGameStatus("Win");
+    }
+    else {
+        console.log("Score obtained: " + score + "therefore, you " + "FAILED");
+        updateGameStatus("Fail");
+    }
+    // Enable next button
+    $('button.nextButton').prop('disabled', false);
+    //Disable new game button
+    $('button.newGameSnake').prop('disabled', true);
+}

@@ -29,7 +29,7 @@ block content
             }
             function component(width, height, color, x, y, type) {
                 this.type = type;
-                this.score = 0;
+                this.scoreAcc = 0;
                 this.width = width;
                 this.height = height;
                 this.speedX = 0;
@@ -39,14 +39,14 @@ block content
                 this.gravity = 0;
                 this.gravitySpeed = 0;
                 this.update = function() {
-                    ctx = myGameArea.context;
+                    var ctxAcc = myGameArea.context;
                     if (this.type == "text") {
-                        ctx.font = this.width + " " + this.height;
-                        ctx.fillStyle = color;
-                        ctx.fillText(this.text, this.x, this.y);
+                        ctxAcc.font = this.width + " " + this.height;
+                        ctxAcc.fillStyle = color;
+                        ctxAcc.fillText(this.text, this.x, this.y);
                     } else {
-                        ctx.fillStyle = color;
-                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                        ctxAcc.fillStyle = color;
+                        ctxAcc.fillRect(this.x, this.y, this.width, this.height);
                     }
                 }
                 this.newPos = function() {

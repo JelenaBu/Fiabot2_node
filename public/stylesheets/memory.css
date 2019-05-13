@@ -3,8 +3,14 @@
     border:#999 1px solid;
     width:800px;
     height:540px;
-    padding:24px;
-    margin:0px auto;
+    /*padding:24px;*/
+    /*margin:0px auto;*/
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 #memory_board > div{
     background: url(../images/tile_bg.jpg) no-repeat;

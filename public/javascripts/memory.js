@@ -4,6 +4,7 @@ var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H',
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
+
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -38,10 +39,11 @@ function memoryFlipTile(tile,val){
                 memory_values = [];
                 memory_tile_ids = [];
                 // Check to see if the whole board is cleared
-                if(tiles_flipped == memory_array.length){
-                    alert("Board cleared... generating new board");
-                    document.getElementById('memory_board').innerHTML = "";
-                    newBoard();
+                if(tiles_flipped == memory_array.length){ // Here game is finished
+                    checkstatusMemory();
+                    alert("Game finished!");
+                    // document.getElementById('memory_board').innerHTML = "";
+                    // newBoard();
                 }
             } else {
                 function flip2Back(){

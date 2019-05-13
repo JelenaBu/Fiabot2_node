@@ -101,6 +101,10 @@ router.post('/updateGameStatus', function(req, res, next) {
 
 });
 
+router.get('/snake', function(req, res, next) {
+    res.render('snake', { title: 'Express' });
+});
+
 // Method in prova, non funziona
 router.get('/saveAll', function(req, res, next) {
     var student = {

@@ -1,6 +1,8 @@
 extends layout
 block content
       body(onload='newBoard();')
-        #memory_board
-      form.nextButton(action='#', method='GET')
-              button(type='submit') Avanti
+      p.gameTitle Minigioco 3 - Memory
+      p L'obiettivo del Memory è formare coppie di carte uguali. Per giocare serve quindi un po' di memoria. Scopri due carte alla volta con l’obiettivo di formare coppie uguali. Per vincere il gioco è necessario trovare tutte e 12 le coppie entro 2 minuti.
+      #memory_board
+      form(action='#', method='GET')
+              button.nextButton(type='submit', disabled='') Avanti
