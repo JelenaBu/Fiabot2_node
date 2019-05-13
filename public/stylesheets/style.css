@@ -82,7 +82,7 @@ div {
 .carTitle {
   text-align: center;
   font-size: 50px;
-  color: #dcd0bc;
+  color: #4ddbff;
   font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -126,6 +126,11 @@ div {
 }
 .cursor{
   cursor: pointer;
+}
+.nextButton {
+  position: fixed;
+  bottom: 200px;
+  right: 200px;
 }
 
 /* Places page*/

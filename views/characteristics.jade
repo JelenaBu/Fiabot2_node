@@ -7,54 +7,54 @@ block content
       b  protagonista
       | .
       |     Una volta fatto, lanciate la moneta dei contrari. Se vi uscirà la scritta "Uguale" otterrete le caratteristiche che avete selezionato, se invece vi uscirà "Contrari" allora dovrete utilizzare i loro contrari.
-    form(action='/action_page.php')
+    form#charForm(method='POST' action='/start/registerCharacteristics')
       .container
         div(style='width: 12em; float: left;')
-          input(type='checkbox', name='Bello', value='Bello')
+          input.single-checkbox(type='checkbox', name='Bello', value='Bello')
           |  Bello
           br
-          input(type='checkbox', name='Muscoloso', value='Muscoloso')
+          input.single-checkbox(type='checkbox', name='Muscoloso', value='Muscoloso')
           |  Muscoloso
           br
-          input(type='checkbox', name='Pigro', value='Pigro')
+          input.single-checkbox(type='checkbox', name='Pigro', value='Pigro')
           |  Pigro
           br
-          input(type='checkbox', name='Umile', value='Umile')
+          input.single-checkbox(type='checkbox', name='Umile', value='Umile')
           |  Umile
           br
-          input(type='checkbox', name='Avaro', value='Avaro')
+          input.single-checkbox(type='checkbox', name='Avaro', value='Avaro')
           |  Avaro
           br
         div(style='width: 12em; float: left;')
-          input(type='checkbox', name='Sensibile', value='Sensibile')
+          input.single-checkbox(type='checkbox', name='Sensibile', value='Sensibile')
           |  Sensibile
           br
-          input(type='checkbox', name='Caritatevole', value='Caritatevole')
+          input.single-checkbox(type='checkbox', name='Caritatevole', value='Caritatevole')
           |  Caritatevole
           br
-          input(type='checkbox', name='Debole', value='Debole')
+          input.single-checkbox(type='checkbox', name='Debole', value='Debole')
           |  Debole
           br
-          input(type='checkbox', name='Lento', value='Lento')
+          input.single-checkbox(type='checkbox', name='Lento', value='Lento')
           |  Lento
           br
-          input(type='checkbox', name='Intelligente', value='Intelligente')
+          input.single-checkbox(type='checkbox', name='Intelligente', value='Intelligente')
           |  Intelligente
           br
         div(style='width: 12em; float: left;')
-          input(type='checkbox', name='Impaziente', value='Impaziente')
+          input.single-checkbox(type='checkbox', name='Impaziente', value='Impaziente')
           |  Impaziente
           br
-          input(type='checkbox', name='Presuntuoso', value='Presuntuoso')
+          input.single-checkbox(type='checkbox', name='Presuntuoso', value='Presuntuoso')
           |  Presuntuoso
           br
-          input(type='checkbox', name='Simpatico', value='Simpatico')
+          input.single-checkbox(type='checkbox', name='Simpatico', value='Simpatico')
           |  Simpatico
           br
-          input(type='checkbox', name='Prudente', value='Prudente')
+          input.single-checkbox(type='checkbox', name='Prudente', value='Prudente')
           |  Prudente
           br
-          input(type='checkbox', name='Generoso', value='Generoso')
+          input.single-checkbox(type='checkbox', name='Generoso', value='Generoso')
           |  Generoso
           br
         br
@@ -64,7 +64,7 @@ block content
         br
         br
       input.cursor(type='submit', value='Conferma')
-    p Avete selezionato:
+    p#selectedChar
     .div
       p
         | Adesso scoprite se otterrete le caratteristiche che avete selezionato oppure i loro contrari:
@@ -74,3 +74,6 @@ block content
         .column2
           button.dice-roll(type='button') Lancia la moneta
           h2#status Avete ottenuto....
+    form.nextButton(action='start/powers', method='GET')
+                          button(type='submit') Avanti
+

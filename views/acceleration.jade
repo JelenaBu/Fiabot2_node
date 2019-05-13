@@ -1,6 +1,8 @@
 extends layout
 block content
     body(onload='startGame()')
+        form.nextButton(action='/start/memory', method='GET')
+            button(type='submit') Avanti
         script.
             var myGamePiece;
             var myObstacles = [];

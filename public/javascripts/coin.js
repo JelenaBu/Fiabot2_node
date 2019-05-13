@@ -20,3 +20,38 @@ window.addEventListener( 'DOMContentLoaded', function () {
     buttonRoolDice.addEventListener( 'click', rollDice, false );
 
 }, false);
+
+var charForm = document.getElementById("charForm");
+
+$(charForm).submit(function(event) {
+    // Stop the browser from submitting the form.
+    event.preventDefault();
+    var formData = $(charForm).serializeArray();
+    // console.log(formData);
+    $.ajax({
+        type: 'POST',
+        url: $(charForm).attr('action'),
+        data: formData
+    }).done(function(response) {
+        var selected = "";
+        for (var entry in formData){
+            var newSelected;
+            console.log(formData[entry])
+            if(formData[entry].value){
+                newSelected = formData[entry].value;
+                selected += newSelected + " ";
+            }
+        }
+        document.getElementById("selectedChar").innerHTML = "Avete selezionato: " + selected
+    })
+});
+
+// Allow to select only 4 characteristics
+var limit = 4;
+$('input.single-checkbox').on('change', function(evt) {
+    console.log($(this).siblings())
+    if($('form#charForm input').siblings(':checked').length > limit) {
+        this.checked = false;
+        alert("Puoi selezionare solo 4 caratteristiche.");
+    }
+});

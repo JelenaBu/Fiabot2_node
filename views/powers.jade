@@ -1,0 +1,68 @@
+extends layout
+block content
+    body.bgcolor
+    p.carTitle Poteri e oggetti magici
+    p In questa fase avete la possibilità di far guadagnare ai vostri personaggi dei poteri o oggetti magici. Di seguito avete una lista di oggetti o poteri tra cui potete scegliere. Selezionatene 3.
+    form#charForm(method='POST' action='/start/registerPowers')
+        .container
+            div(style='width: 12em; float: left;')
+                input(type='checkbox', name='Bacchetta magica', value='Bacchetta magica')
+                |  Bacchetta magica
+                br
+                input(type='checkbox', name='Potere di rimpicciolirsi', value='Potere di rimpicciolirsi')
+                |  Potere di rimpicciolirsi
+                br
+                input(type='checkbox', name='Lettura del pensiero', value='Lettura del pensiero')
+                |  Lettura del pensiero
+                br
+                input(type='checkbox', name='Pozioni magiche', value='Pozioni magiche')
+                |  Pozioni magiche
+                br
+                input(type='checkbox', name='Spada indistruttibile', value='Spada indistruttibile')
+                |  Spada indistruttibile
+                br
+            div(style='width: 12em; float: left;')
+                input(type='checkbox', name='Libro di incantesimi', value='Libro di incantesimi')
+                |  Libro di incantesimi
+                br
+                input(type='checkbox', name='Super velocità', value='Super velocità')
+                |  Super velocità
+                br
+                input(type='checkbox', name='Sfera di cristallo', value='Sfera di cristallo')
+                |  Sfera di cristallo
+                br
+                input(type='checkbox', name='Super forza', value='Super forza')
+                |  Super forza
+                br
+                input(type='checkbox', name='Teletrasporto', value='Teletrasporto')
+                |  Teletrasporto
+                br
+            div(style='width: 12em; float: left;')
+                input(type='checkbox', name='Super udito', value='Super udito')
+                |  Super udito
+                br
+                input(type='checkbox', name='Cappello magico', value='Cappello magico')
+                |  Cappello magico
+                br
+                input(type='checkbox', name='Mantello dell’invisibilità', value='Mantello dell’invisibilità')
+                |  Mantello dell’invisibilità
+                br
+                input(type='checkbox', name='Super intelligenza', value='Super intelligenza')
+                |  Super intelligenza
+                br
+                input(type='checkbox', name='Macchina del tempo', value='Macchina del tempo')
+                |  Macchina del tempo
+                br
+            br
+            br
+            br
+            br
+            br
+            br
+        input.cursor(type='submit', value='Conferma')
+
+
+    p Per guadagnare ognuno dei poteri/oggetti che avete scelto dovrete affrontare un minigioco: se riuscirete a completarlo in X minuti vincerete l’oggetto/potere in questione, altrimenti lo perderete e dovrete proseguire senza di esso.
+
+    form.nextButton(action='/start/tictactoe', method='GET')
+        button(type='submit') Avanti
