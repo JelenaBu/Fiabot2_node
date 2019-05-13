@@ -20,11 +20,6 @@ router.get('/characteristics', function(req, res, next) {
     res.render('characteristics', { title: 'Express' });
 });
 
-// TODO: put games as "/games/..."
-router.get('/memory', function(req, res, next) {
-    res.render('memory', { title: 'Express' });
-});
-
 router.get('/places', function(req, res, next) {
     res.render('places', { title: 'Express' });
 });
@@ -91,8 +86,8 @@ router.post('/registerPowers', function(req, res, next) {
 
 router.post('/updateGameStatus', function(req, res, next) {
     var request = req.body;
-    console.log(request)
-    console.log(taleData)
+    console.log(request);
+    console.log(taleData);
 
     taleData.gamesStatus.push(request.data);
 
