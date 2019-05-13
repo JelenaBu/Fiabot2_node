@@ -2,18 +2,32 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     const buttonRoolDice = document.querySelector( '.dice-roll' );
 
-    function rollDice () {
 
-        const status = document.getElementById( 'status' );
+    buttonRoolDice.addEventListener( 'click', rollDice, false );
 
-        var side1 = Math.floor( Math.random() * 6 ) + 1;
+}, false);
 
-        if(side1 % 2 == 0){
-            side1 = "Uguale";
-        } else {
-            side1 = "Contrari";
-        }
+function rollDice () {
 
+    const status = document.getElementById( 'status' );
+
+    var side1 = Math.floor( Math.random() * 6 ) + 1;
+
+    if(side1 % 2 == 0){
+        side1 = "Uguale";
+    } else {
+        side1 = "Contrari";
+    }
+
+    var coinData = {
+        contrary : side1
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: 'start/registerCharacteristicsType',
+        data: coinData
+    }).done(function(response) {
         status.innerHTML = 'Avete ottenuto "' + side1 + '".';
 
         // Disable this button
@@ -21,11 +35,18 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
         // Enable next button
         $('button.nextButton').prop('disabled', false);
+    });
+
+}
+
+// Allow to select only 4 characteristics
+var charlimit = 4;
+$('input.single-checkbox').on('change', function(evt) {
+    if($('form#charForm input').siblings(':checked').length > charlimit) {
+        this.checked = false;
+        alert("Puoi selezionare solo 4 caratteristiche.");
     }
-
-    buttonRoolDice.addEventListener( 'click', rollDice, false );
-
-}, false);
+});
 
 var charForm = document.getElementById("charForm");
 
@@ -34,7 +55,7 @@ $(charForm).submit(function(event) {
     event.preventDefault();
 
     // Check if are selected exactly 4 characteristics
-    if($('form#charForm input').siblings(':checked').length != limit) {
+    if($('form#charForm input').siblings(':checked').length != charlimit) {
         alert("Per continuare è necessario selezionare 4 caratteristiche.");
         return false;
     }
@@ -65,11 +86,3 @@ $(charForm).submit(function(event) {
     })
 });
 
-// Allow to select only 4 characteristics
-var limit = 4;
-$('input.single-checkbox').on('change', function(evt) {
-    if($('form#charForm input').siblings(':checked').length > limit) {
-        this.checked = false;
-        alert("Puoi selezionare solo 4 caratteristiche.");
-    }
-});

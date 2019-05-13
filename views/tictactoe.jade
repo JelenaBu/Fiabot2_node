@@ -43,7 +43,7 @@ block content
                                 tr
                                     td
                                         input(type='text', size='5', name='you')
-                                    td You
+                                    td Tu
                                 tr
                                     td
                                         input(type='text', size='5', name='computer')
@@ -51,10 +51,8 @@ block content
                                 tr
                                     td
                                         input(type='text', size='5', name='ties')
-                                    td Ties
-        input(type='button', value='Play Again', onclick='playAgain();')
-        input(type='button', value='Game Help', onclick='help();')
-        input(type='button', value='Quit Game', onclick='quitGame();')
+                                    td Pareggi
+        input(type='button', value='Gioca di nuovo', onclick='playAgain();')
     form.nextButton(action='/start/acceleration', method='GET')
         button(type='submit') Avanti
     script(language='JavaScript').
@@ -87,9 +85,7 @@ block content
         var wn = 0;
         var ls = 0;
         var ts = 0;
-        function help() {
-        alert("Welcome to Tic-Tac-Toe!  You play as the X's and the computer is the O's.  Select the square you want to put your X into by clicking them.  You cannot occupy a square that is already occupied. The first player to get three squares in a row wins.  Good Luck!!")
-        }
+
         function logicOne() {
         if ((a == 1) && (b == 1) && (c == 1)) all=1;
         if ((a == 1) && (d == 1) && (g == 1)) all=1;
@@ -258,13 +254,13 @@ block content
         process();
         }
         function ended() {
-        alert("The game has already ended. To play a new game click the Play Again button.")
+        alert("Il gioco è già finito. Per giocare di ancora sul bottone Gioca di nuovo.")
         }
         function process() {
         logicOne();
-        if (all == 1){ alert("You won, congratulations!"); wn++; }
-        if (all == 2){ alert("Gotcha!  I win!"); ls++; }
-        if (all == 3){ alert("We tied."); ts++; }
+        if (all == 1){ alert("Hai vinto, congratulazioni!"); wn++; }
+        if (all == 2){ alert("Hai perso!"); ls++; }
+        if (all == 3){ alert("Abbiamo pareggiato, gioca di nuovo."); ts++; }
         if (all != 0) {
         document.game.you.value = wn;
         document.game.computer.value = ls;
@@ -273,7 +269,7 @@ block content
         }
         function playAgain() {
         if (all == 0) {
-        if(confirm("This will restart the game and clear all the current scores. OK?")) reset();
+        if(confirm("Questo inizierà un nuovo gioco eliminando quello attuale. Sei sicuro di voler continuare?")) reset();
         }
         if (all > 0) reset();
         }
