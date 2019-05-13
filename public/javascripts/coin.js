@@ -26,6 +26,13 @@ var charForm = document.getElementById("charForm");
 $(charForm).submit(function(event) {
     // Stop the browser from submitting the form.
     event.preventDefault();
+
+    // Check if are selected exactly 4 characteristics
+    if($('form#charForm input').siblings(':checked').length != limit) {
+        alert("Per continuare è necessario selezionare 4 caratteristiche.");
+        return false;
+    }
+
     var formData = $(charForm).serializeArray();
     // console.log(formData);
     $.ajax({
@@ -49,7 +56,6 @@ $(charForm).submit(function(event) {
 // Allow to select only 4 characteristics
 var limit = 4;
 $('input.single-checkbox').on('change', function(evt) {
-    console.log($(this).siblings())
     if($('form#charForm input').siblings(':checked').length > limit) {
         this.checked = false;
         alert("Puoi selezionare solo 4 caratteristiche.");
