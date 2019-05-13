@@ -141,4 +141,11 @@ div {
   font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-/* Tests page*/
+/* Giochi page*/
+.gameTitle{
+  text-align: center;
+  font-size: 50px;
+  color: #aa80ff;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

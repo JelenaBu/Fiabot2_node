@@ -8,7 +8,7 @@ var taleData = {
     characteristics : [],
     contrary : "",
     powers : [],
-    games : [] // 0 for WIN, 1 for FAIL
+    gamesStatus : []
 }
 
 /*  */
@@ -54,7 +54,7 @@ router.post('/registerCharacteristics', function(req, res, next) {
 
 });
 
-/* Save Characteristics for characters */
+/* Save characteristics type */
 router.post('/registerCharacteristicsType', function(req, res, next) {
     var request = req.body;
     // console.log(request.contrary);
@@ -85,6 +85,18 @@ router.post('/registerPowers', function(req, res, next) {
         taleData.powers.push(request[key]);
     });
     console.log(taleData)
+    res.status(204).send();
+
+});
+
+router.post('/updateGameStatus', function(req, res, next) {
+    var request = req.body;
+    console.log(request)
+    console.log(taleData)
+
+    taleData.gamesStatus.push(request.data);
+
+    console.log(taleData);
     res.status(204).send();
 
 });

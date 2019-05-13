@@ -1,5 +1,7 @@
 extends layout
 block content
+    p.gameTitle Minigioco 1 - Tris
+    p In questo gioco dovere scegliere una cella vuota per piazzare il vostro simbolo. Vince il giocatore che riesce a disporre tre dei propri simboli in linea retta orizzontale, verticale o diagonale. Se la griglia viene riempita senza che nessuno dei giocatori sia riuscito a completare una linea retta di tre simboli, il gioco finisce in parità. Vincerai questo minigioco se riuscirai a battere il computer per 3 volte.
     form(name='game')
         table(border='0')
             tbody
@@ -52,12 +54,10 @@ block content
                                     td
                                         input(type='text', size='5', name='ties')
                                     td Pareggi
-        input(type='button', value='Gioca di nuovo', onclick='playAgain();')
-    form.nextButton(action='/start/acceleration', method='GET')
-        button(type='submit') Avanti
+        input.newGame(type='button', value='Gioca di nuovo', onclick='playAgain();')
+    form(action='/start/acceleration', method='GET')
+        button.nextButton(type='submit', disabled='') Avanti
     script(language='JavaScript').
-        <!-- Original:  Maximilian Stocker (maxstocker@reallyusefulcomputing.com) -->
-        <!-- Begin
         var x = "/images/x.jpg";
         // Location of where you uploaded your site's x.jpg image
         var o = "/images/o.jpg";
@@ -226,7 +226,7 @@ block content
         }
         }
         function taken() {
-        alert("That square is already occupied.  Please select another square.")
+        alert("Questo spazio è già occupato. Perfavore selezionane un altro.")
         pause=1;
         }
         function myChoice() {
@@ -262,6 +262,7 @@ block content
         if (all == 2){ alert("Hai perso!"); ls++; }
         if (all == 3){ alert("Abbiamo pareggiato, gioca di nuovo."); ts++; }
         if (all != 0) {
+        checkstatus(wn,ls,ts);
         document.game.you.value = wn;
         document.game.computer.value = ls;
         document.game.ties.value = ts;

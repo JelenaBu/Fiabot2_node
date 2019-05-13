@@ -36,3 +36,41 @@ $('input.single-checkbox').on('change', function(evt) {
         alert("Puoi selezionare solo 3 poteri/oggetti magici.");
     }
 });
+
+function updateGameStatus(gameStatus) {
+    var gameData = {
+        data : gameStatus
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: '/start/updateGameStatus',
+        data: gameData
+    }).done(function(response) {
+        console.log("Game status updated")
+    });
+
+}
+
+function checkstatus(wn,ls,ts) {
+    // The user winned
+    if(wn == 3){
+        // Enable next button
+        $('button.nextButton').prop('disabled', false);
+        //Disable new game button
+        $('input.newGame').prop('disabled', true);
+        // update game status
+        updateGameStatus("Win");
+    }
+    // The user failed
+    if(ls == 3){
+        // Enable next button
+        $('button.nextButton').prop('disabled', false);
+        //Disable new game button
+        $('input.newGame').prop('disabled', true);
+        // update game status
+        updateGameStatus("Fail");
+    }
+
+
+}
