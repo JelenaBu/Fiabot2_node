@@ -63,7 +63,7 @@ block content
         br
         br
         br
-      input.cursor(type='submit', value='Conferma')
+      input#coinButton.cursor(type='submit', value='Conferma')
     p#selectedChar
     .div
       p
@@ -72,8 +72,8 @@ block content
         .column
           #dice-side-1.dice &#927
         .column2
-          button.dice-roll(type='button') Lancia la moneta
+          button.dice-roll(type='button', disabled='') Lancia la moneta
           h2#status Avete ottenuto....
     form.nextButton(action='start/powers', method='GET')
-                          button(type='submit') Avanti
+                          button.nextButton(type='submit', disabled='') Avanti
 

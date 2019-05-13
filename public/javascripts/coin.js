@@ -15,6 +15,12 @@ window.addEventListener( 'DOMContentLoaded', function () {
         }
 
         status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+
+        // Disable this button
+        $('button.dice-roll').prop('disabled', true);
+
+        // Enable next button
+        $('button.nextButton').prop('disabled', false);
     }
 
     buttonRoolDice.addEventListener( 'click', rollDice, false );
@@ -50,6 +56,12 @@ $(charForm).submit(function(event) {
             }
         }
         document.getElementById("selectedChar").innerHTML = "Avete selezionato: " + selected
+
+        // Disable confirm button
+        $('input#coinButton.cursor').prop('disabled', true);
+
+        // Enable coin button
+        $('button.dice-roll').prop('disabled', false);
     })
 });
 

@@ -48,6 +48,7 @@ router.get('/powers', function(req, res, next) {
 /* Save Characteristics for characters */
 router.post('/registerPowers', function(req, res, next) {
     var request = req.body;
+    console.log(request)
 
     Object.keys(request).forEach(function(key,index) {
         // key: the name of the object key
