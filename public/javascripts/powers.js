@@ -71,6 +71,18 @@ function checkstatus(wn,ls,ts) {
         // update game status
         updateGameStatus("Fail");
     }
+}
 
-
+function checkstatusAcceleration(score) {
+    console.log("Score obtained: " + score);
+    if (score >= 2000){
+        updateGameStatus("Win");
+    }
+    else {
+        updateGameStatus("Fail");
+    }
+    // Enable next button
+    $('button.nextButton').prop('disabled', false);
+    //Disable new game button
+    $('button.newGame').prop('disabled', true);
 }

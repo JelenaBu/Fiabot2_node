@@ -1,8 +1,11 @@
 extends layout
 block content
-    body(onload='startGame()')
-        form.nextButton(action='/start/memory', method='GET')
-            button(type='submit') Avanti
+        p.gameTitle Minigioco 2 - Supera gli ostacoli
+        p In questo gioco per vincere dovrai riuscire a superare gli ostacoli, ovvero i muri verdi, e ottenere un punteggio minimo di 2000 punti. Per stare in aria premere sul pulsante “ACCELERA”.
+        canvas#gameCanvas(width='480', height='300')
+        form(action='/start/memory', method='GET')
+            button.nextButton(type='submit', disabled='') Avanti
+
         script.
             var myGamePiece;
             var myObstacles = [];
@@ -14,12 +17,9 @@ block content
                 myGameArea.start();
             }
             var myGameArea = {
-                canvas : document.createElement("canvas"),
+                canvas : document.getElementById('gameCanvas'),
                 start : function() {
-                    this.canvas.width = 480;
-                    this.canvas.height = 270;
                     this.context = this.canvas.getContext("2d");
-                    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
                     this.frameNo = 0;
                     this.interval = setInterval(updateGameArea, 20);
                 },
@@ -82,7 +82,10 @@ block content
                 var x, height, gap, minHeight, maxHeight, minGap, maxGap;
                 for (i = 0; i < myObstacles.length; i += 1) {
                     if (myGamePiece.crashWith(myObstacles[i])) {
-                        return;
+                        console.log("---------- CRASH -----------");
+                        clearInterval(myGameArea.interval);
+                        checkstatusAcceleration(myGameArea.frameNo);
+                        return false;
                     }
                 }
                 myGameArea.clear();
@@ -102,19 +105,23 @@ block content
                     myObstacles[i].x += -1;
                     myObstacles[i].update();
                 }
-                myScore.text="SCORE: " + myGameArea.frameNo;
+
+                myScore.text="Punteggio: " + myGameArea.frameNo;
                 myScore.update();
                 myGamePiece.newPos();
                 myGamePiece.update();
             }
             function everyinterval(n) {
-                if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+                if ((myGameArea.frameNo / n) % 1 == 0) {
+                    return true;
+                }
                 return false;
             }
             function accelerate(n) {
                 myGamePiece.gravity = n;
             }
         br
-        button(onmousedown='accelerate(-0.2)', onmouseup='accelerate(0.05)') ACCELERATE
-        p Use the ACCELERATE button to stay in the air
-        p How long can you stay alive?
+        div.accbuttons
+            button.newGame(type='button' onclick='startGame()') INIZIA
+            button(onmousedown='accelerate(-0.2)', onmouseup='accelerate(0.05)') ACCELERA
+
