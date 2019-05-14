@@ -8,7 +8,9 @@ var taleData = {
     characteristics : [],
     contrary : "",
     powers : [],
-    gamesStatus : []
+    gamesStatus : [],
+    places : [],
+    finalPlace : 0
 }
 
 /*  */
@@ -75,13 +77,41 @@ router.post('/registerPowers', function(req, res, next) {
     Object.keys(request).forEach(function(key,index) {
         // key: the name of the object key
         // index: the ordinal position of the key within the object
-        console.log('Selected characteristics');
+        console.log('Selected powers');
         console.log('this is the key (' + key + ') . Value: ' + request[key]);
         taleData.powers.push(request[key]);
     });
     console.log(taleData)
     res.status(204).send();
 
+});
+
+router.post('/updateGameStatus', function(req, res, next) {
+    var request = req.body;
+    console.log(req);
+    console.log(taleData);
+
+    taleData.gamesStatus.push(request.data);
+
+    console.log(taleData);
+    res.status(204).send();
+
+});
+
+router.post('/registerPlaces', function(req, res, next) {
+    var request = req.body;
+    // console.log(request)
+    console.log(taleData)
+
+    Object.keys(request).forEach(function(key,index) {
+        // key: the name of the object key
+        // index: the ordinal position of the key within the object
+        console.log('Selected places');
+        console.log('this is the key (' + key + ') . Value: ' + request[key]);
+        taleData.places.push(request[key]);
+    });
+    console.log(taleData);
+    res.status(204).send();
 });
 
 router.post('/updateGameStatus', function(req, res, next) {
@@ -96,9 +126,19 @@ router.post('/updateGameStatus', function(req, res, next) {
 
 });
 
-router.get('/snake', function(req, res, next) {
-    res.render('snake', { title: 'Express' });
+router.post('/updateFinalPlace', function(req, res, next) {
+    var request = req.body;
+    // console.log(request.data);
+    // console.log(taleData);
+    // console.log(taleData.places[request.data]);
+    taleData.finalPlace = taleData.places[request.data];
+
+    console.log(taleData);
+    res.status(204).send();
+
 });
+
+
 
 // Method in prova, non funziona
 router.get('/saveAll', function(req, res, next) {
