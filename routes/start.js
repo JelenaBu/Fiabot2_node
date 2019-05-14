@@ -6,14 +6,19 @@ const fs = require('fs');
 
 var taleData = {
     characteristics : [],
-    contrary : "",
+    finalCharacteristics : [],
+    contrary : "", // Uguale, Contrari
     powers : [],
-    gamesStatus : [],
+    gamesStatus : [], // Win, Fail
+    finalPowers : [],
     places : [],
     finalPlace : 0,
     tests: [],
     finalTests : []
 }
+
+var caratteristiche = ["Bello", "Muscoloso", "Pigro", "Umile", "Avaro", "Sensibile", "Caritatevole", "Debole", "Lento", "Intelligente", "Impaziente", "Presuntuoso", "Simpatico", "Prudente", "Generoso"];
+var contrari = ["Brutto", "Gracile", "Attivo", "Altezzoso", "Generoso", "Indifferente", "Egoista", "Forte", "Veloce", "Ignorante", "Paziente", "Modesto", "Antipatics", "Audace", "Volgare"];
 
 /*  */
 router.get('/', function(req, res, next) {
@@ -168,33 +173,43 @@ router.post('/registerTests', function(req, res, next) {
     res.status(204).send();
 });
 
+router.post('/registerFinalTests', function(req, res, next) {
+    // TODO: not done yet
+});
 
 
-// Method in prova, non funziona
+
 router.get('/saveAll', function(req, res, next) {
-    var student = {
-        name: 'Mike',
-        age: 23,
-        gender: 'Male',
-        department: 'English',
-        car: 'Honda'
-    };
+    // Process Characteristics
+    if(taleData.contrary == "Contrari"){
+        for(var i = 0; i++; i < 4){
+            var temIndex = caratteristiche.indexOf(taleData.characteristics[i]);
+            console.log(temIndex)
+            finalCharacteristics.push(contrari[temIndex]);
+        }
+    } else {
+        taleData.finalCharacteristics = taleData.characteristics;
+    }
 
-    var data = JSON.stringify(student, null, 2);
+    // Process Powers
+     for(var i = 0; i++; i < 3) {
+        if(taleData.gamesStatus[i] == "Win"){
+            taleData.finalPowers.push(taleData.powers[i])
+        }
+     }
 
-    fs.writeFile('../taleData.json', data,  function (err){
+    var data = JSON.stringify(taleData, null, 2);
+
+    fs.writeFile('taleData.json', data, 'utf8',  function (err){
         if (err) throw err;
         console.log('Data written to file');
     });
 
-    res.render('/', { title: 'Express' });
+    res.render('/dashboard', { title: 'Express' });
 
 });
 
-// Based on data in taleData process what the user obtained and than create dashboard
-// function processData() {
-//
-// }
+
 
 
 module.exports = router;
