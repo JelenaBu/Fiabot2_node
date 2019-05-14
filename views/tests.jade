@@ -1,40 +1,41 @@
 extends layout
 block content
     body.bgcolor
-        p.carTitle Luoghi
+        p.carTitle Prove
         #chart
             h1
         div
-            p.pText Adesso siamo arrivati alla scelta delle possibili ambientazioni per la vostra fiaba. Di seguito indicate per ogni punto un possibile luogo (come da esempio al punto 1.).
-            form#placesForm.wheelform(method='POST', action='/start/registerPlaces')
+            p.pText Siamo arrivati alla fine! A questo punto determinerete quante e quali prove dovrà affrontare il vostro protagonista. Di seguito indicate per ogni punto una possibile prova (come da esempio al punto 1.).
+            form#testsForm.wheelform(method='POST', action='/start/registerTests')
                 .block
                     label 1.
-                    input(type='text' value='Foresta', required='',readonly='', name='place1')
+                    input(type='text' value='Risolvere un indovinello', required='',readonly='', name='test1', size='25')
                 .block
                     label 2.
-                    input(type='text', required='', name='place2')
+                    input(type='text', required='', name='test2', size='25')
                 .block
                     label 3.
-                    input(type='text', required='', name='place3')
+                    input(type='text', required='', name='test3', size='25')
                 .block
                     label 4.
-                    input(type='text', required='', name='place4')
+                    input(type='text', required='', name='test4', size='25')
                 .block
                     label 5.
-                    input(type='text', required='', name='place5')
+                    input(type='text', required='', name='test5', size='25')
                 .block
                     label 6.
-                    input(type='text', required='', name='place6')
+                    input(type='text', required='', name='test6', size='25')
                 .block
                     label 7.
-                    input(type='text', required='', name='place7')
+                    input(type='text', required='', name='test7', size='25')
                 .block
                     label 8.
-                    input(type='text', required='', name='place8')
-                input#confirmPlaces(type='submit', value='Conferma')
-            p.pText Una volta fatto, girate la ruota della fortuna! Il numero che uscirà corrisponderà al luogo che avete scritto nel punto corrispondente!
+                    input(type='text', required='', name='test8', size='25')
+                input#confirmTests(type='submit', value='Conferma')
+            p.pText Una volta fatto, lanciate il dato: il risultato che otterrete corrisponderà al numero di prove da affrontare. Quindi, se dovesse uscire 3, girate la ruota della fortuna 3 volte. Il numero che uscirà sulla ruota a ogni girata corrisponderà alla prova che avete indicato al numero corrispondente!
             p#esito
-            form.nextButton(action='start/tests', method='GET')
+
+            form(action='#', method='GET')
                 button.nextButton(type='submit', disabled='') Avanti
 
         script(src='https://d3js.org/d3.v3.min.js', charset='utf-8')
@@ -51,29 +52,29 @@ block content
 
             var data = [
                 {
-                    "label": "Luogo 1",
+                    "label": "Prova 1",
                     "value": 0
                 },
-                {"label": "Luogo 2", "value": 1},
+                {"label": "Prova 2", "value": 1},
                 {
-                    "label": "Luogo 3",
+                    "label": "Prova 3",
                     "value": 2
                 },
                 {
-                    "label": "Luogo 4",
+                    "label": "Prova 4",
                     "value": 3
                 },
-                {"label": "Luogo 5", "value": 4},
+                {"label": "Prova 5", "value": 4},
                 {
-                    "label": "Luogo 6",
+                    "label": "Prova 6",
                     "value": 5
                 },
                 {
-                    "label": "Luogo 7",
+                    "label": "Prova 7",
                     "value": 6
                 },
                 {
-                    "label": "Luogo 8",
+                    "label": "Prova 8",
                     "value": 7
                 }
             ];
@@ -145,7 +146,7 @@ block content
                     .each("end", function () {
                         //alert what is the result
                         alert("La tua fiaba si svolgera nel " + data[picked].label);
-                        registerFinalPlace(data[picked].value);
+                        //registerFinalPlace(data[picked].value);
                         enableNext();
                         d3.select(".slice:nth-child(" + (picked + 1) + ") path")
                             .attr("fill", "#111");

@@ -10,7 +10,9 @@ var taleData = {
     powers : [],
     gamesStatus : [],
     places : [],
-    finalPlace : 0
+    finalPlace : 0,
+    tests: [],
+    finalTests : []
 }
 
 /*  */
@@ -136,6 +138,26 @@ router.post('/updateFinalPlace', function(req, res, next) {
     console.log(taleData);
     res.status(204).send();
 
+});
+
+router.get('/tests', function(req, res, next) {
+    res.render('tests', { title: 'Express' });
+});
+
+router.post('/registerTests', function(req, res, next) {
+    var request = req.body;
+    // console.log(request)
+    console.log(taleData)
+
+    Object.keys(request).forEach(function(key,index) {
+        // key: the name of the object key
+        // index: the ordinal position of the key within the object
+        console.log('Selected places');
+        console.log('this is the key (' + key + ') . Value: ' + request[key]);
+        taleData.tests.push(request[key]);
+    });
+    console.log(taleData);
+    res.status(204).send();
 });
 
 
