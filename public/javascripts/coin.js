@@ -1,11 +1,3 @@
-window.addEventListener( 'DOMContentLoaded', function () {
-
-    const buttonRoolDice = document.querySelector( '.dice-roll' );
-
-
-    buttonRoolDice.addEventListener( 'click', rollDice, false );
-
-}, false);
 
 function rollDice () {
 

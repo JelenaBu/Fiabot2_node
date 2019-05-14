@@ -144,6 +144,14 @@ router.get('/tests', function(req, res, next) {
     res.render('tests', { title: 'Express' });
 });
 
+router.get('/tests2', function(req, res, next) {
+    res.render('tests2', { title: 'Express' });
+});
+
+router.get('/getAllTest', function(req, res, next) {
+    res.send(taleData.tests);
+});
+
 router.post('/registerTests', function(req, res, next) {
     var request = req.body;
     // console.log(request)
