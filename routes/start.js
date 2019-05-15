@@ -41,6 +41,10 @@ router.get('/acceleration', function(req, res, next) {
     res.render('acceleration', { title: 'Express' });
 });
 
+router.get('/snake', function(req, res, next) {
+    res.render('snake', { title: 'Express' });
+});
+
 /* Save Characteristics for characters */
 router.post('/registerCharacteristics', function(req, res, next) {
     var request = req.body;

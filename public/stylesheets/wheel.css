@@ -30,17 +30,26 @@ text{
 }
 
 .pText{
-    width: 500px;
+    width: 700px;
     text-align: center;
-    transform: translateX(80%);
+    transform: translateX(60%);
 
 }
 
 .wheelform{
     transform: translateX(40%);
 }
-label {
+.wheelform2{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+#confirmPlaces{
+    cursor: pointer;
+}
+label{
     display: inline-block;
     width: 140px;
-    text-align: right;
+    text-align: center;
 }​

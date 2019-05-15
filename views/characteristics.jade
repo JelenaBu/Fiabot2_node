@@ -1,14 +1,14 @@
 extends layout
 block content
-   body.bgcolor
+   body.bgimg2
     p.carTitle Caratteristiche
-    p
+    p.textAllign
       | Scegliete 4 caratteristiche per il vostro
       b  protagonista
       | .
       |     Una volta fatto, lanciate la moneta dei contrari. Se vi uscirà la scritta "Uguale" otterrete le caratteristiche che avete selezionato, se invece vi uscirà "Contrari" allora dovrete utilizzare i loro contrari.
     form#charForm(method='POST' action='/start/registerCharacteristics')
-      .container
+      .charContainer
         div(style='width: 12em; float: left;')
           input.single-checkbox(type='checkbox', name='Bello', value='Bello')
           |  Bello
@@ -63,11 +63,11 @@ block content
         br
         br
         br
+      br
       input#coinButton.cursor(type='submit', value='Conferma')
-    p#selectedChar
+    p#selectedChar.textAllign
+    p.textAllign Adesso scoprite se otterrete le caratteristiche che avete selezionato oppure i loro contrari:
     .div
-      p
-        | Adesso scoprite se otterrete le caratteristiche che avete selezionato oppure i loro contrari:
       .wrapper
         .column
           #dice-side-1.dice &#927

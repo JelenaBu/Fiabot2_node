@@ -1,6 +1,6 @@
 extends layout
 block content
-    body.bgcolor
+    body.bgimg2
         p.carTitle Luoghi
         #chart
             h1
@@ -31,6 +31,7 @@ block content
                 .block
                     label 8.
                     input(type='text', required='', name='place8')
+                br
                 input#confirmPlaces(type='submit', value='Conferma')
             p.pText Una volta fatto, girate la ruota della fortuna! Il numero che uscirà corrisponderà al luogo che avete scritto nel punto corrispondente!
             p#esito
