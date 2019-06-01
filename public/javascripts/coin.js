@@ -17,7 +17,7 @@ function rollDice () {
 
     $.ajax({
         type: 'POST',
-        url: 'start/registerCharacteristicsType',
+        url: '/start/registerCharacteristicsType',
         data: coinData
     }).done(function(response) {
         status.innerHTML = 'Avete ottenuto "' + side1 + '".';

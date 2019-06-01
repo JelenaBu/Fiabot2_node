@@ -22,7 +22,7 @@ var contrari = ["Brutto", "Gracile", "Attivo", "Altezzoso", "Generoso", "Indiffe
 
 /*  */
 router.get('/', function(req, res, next) {
-    res.render('characteristics', { title: 'Express' });
+    res.render('characters', { title: 'Express' });
 });
 
 router.get('/characteristics', function(req, res, next) {
@@ -43,10 +43,6 @@ router.get('/acceleration', function(req, res, next) {
 
 router.get('/snake', function(req, res, next) {
     res.render('snake', { title: 'Express' });
-});
-
-router.get('/cubes', function(req, res, next) {
-    res.render('cubes', { title: 'Express' });
 });
 
 /* Save Characters */
