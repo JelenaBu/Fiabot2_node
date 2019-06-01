@@ -1,52 +1,58 @@
 extends layout
 block content
-    // Page Content
-    .container
-        // Heading Row
-        .row.align-items-center.my-5
-            .col-lg-7
-                img.img-fluid.rounded.mb-4.mb-lg-0(src='http://placehold.it/900x400', alt='')
-            // /.col-lg-8
-            .col-lg-5
-                h1.font-weight-light Business Name or Tagline
-                p
-                    | This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                a.btn.btn-primary(href='#') Call to Action!
-            // /.col-md-4
-            // /.row
-            // Call to Action Well
-            .card.text-white.bg-secondary.my-5.py-4.text-center
+    .row.h-50
+        // First card
+        .col-xl-3.col-md-6.mb-4.h-100
+            .card.border-left-primary.shadow.py-2
                 .card-body
-                    p.text-white.m-0
-                        | This call to action card is a great place to showcase some important information or display a clever tagline!
-            // Content Row
-            .row
-                .col-md-4.mb-5
-                    .card.h-100
-                        .card-body
-                            h2.card-title Card One
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#') More Info
-                // /.col-md-4
-                .col-md-4.mb-5
-                    .card.h-100
-                        .card-body
-                            h2.card-title Card Two
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#') More Info
-                // /.col-md-4
-                .col-md-4.mb-5
-                    .card.h-100
-                        .card-body
-                            h2.card-title Card Three
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#') More Info
-                // /.col-md-4
-                // /.row
-    // /.container
+                    .row.no-gutters.align-items-center
+                        .col.mr-2
+                            .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 Caratteristiche
+                            p.h5.mb-0.font-weight-bold.text-gray-800 bla
+                        .col-auto
+                            i.fas.fa-id-badge.fa-2x.text-gray-300
+        // Second card
+        .col-xl-3.col-md-6.mb-4.h-100
+            .card.border-left-success.shadow.py-2
+                .card-body
+                    .row.no-gutters.align-items-center
+                        .col.mr-2
+                            .text-xs.font-weight-bold.text-success.text-uppercase.mb-1 Oggetti e poteri magici
+                            .h5.mb-0.font-weight-bold.text-gray-800 bla
+                        .col-auto
+                            i.fas.fa-magic.fa-2x.text-gray-300
+        // Third card
+        .col-xl-3.col-md-6.mb-4.h-100
+            .card.border-left-success.shadow.py-2
+                .card-body
+                    .row.no-gutters.align-items-center
+                        .col.mr-2
+                            .text-xs.font-weight-bold.text-success.text-uppercase.mb-1 Luogo
+                            .h5.mb-0.font-weight-bold.text-gray-800 bla
+                        .col-auto
+                            i.fas.fa-map-marker.fa-2x.text-gray-300
+        // Fourth card
+        .col-xl-3.col-md-6.mb-4.h-100
+            .card.border-left-warning.shadow.py-2
+                .card-body
+                    .row.no-gutters.align-items-center
+                        .col.mr-2
+                            .text-xs.font-weight-bold.text-warning.text-uppercase.mb-1 Prove
+                            .h5.mb-0.font-weight-bold.text-gray-800 bla
+                        .col-auto
+                            i.fas.fa-check.fa-2x.text-gray-300
+    .row.h-50
+        .col-lg-6
+            // Default Card Example
+            .card.mb-4
+                .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 Personaggio
+                    p.fas.fa-child
+                .card-body#personaggio bla
+        .col-lg-6
+            // Default Card Example
+            .card.mb-4
+                .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 Dati personali
+                    p.fas.fa-users
+                .card-body#datiPersonali bla
+
+

@@ -14,6 +14,14 @@ html
     title Fiabot! 2.0
     // Bootstrap core CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css')
+
+
+    // PROVA
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/stylesheets/sb-admin-2.min.css', rel='stylesheet')
+    link(href='/stylesheets/all.css', rel='stylesheet')
+
   body
     //Navigation
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
@@ -29,7 +37,7 @@ html
                 button.mybtn(type='submit') Home
             li
               form(action='/about', method='GET')
-                button.mybtn(type='submit') About
+                button.mybtn(type='submit') Progetto
             li
               form(action='/contact', method='GET')
                 button.mybtn(type='submit') Contatto
@@ -51,3 +59,5 @@ html
   script(src='/javascripts/places.js')
   script(src='/javascripts/tests.js')
   script(src='/javascripts/cube.js')
+  script(src='/javascripts/sb-admin-2.js')
+  script(src='/javascripts/jquery.easing.js')

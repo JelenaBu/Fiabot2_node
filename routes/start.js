@@ -53,6 +53,9 @@ router.get('/snake', function(req, res, next) {
 router.get('/user', function(req, res, next) {
     res.render('user', { title: 'Express' });
 });
+router.get('/dashboard', function(req, res, next) {
+    res.render('dashboard', { title: 'Express' });
+});
 
 /* Save Characters */
 
@@ -203,11 +206,15 @@ router.post('/registerUsers', function(req, res, next) {
     taleData.title = request['field4'];
     taleData.other = request['field5'];
 
-    // console.log(taleData);
-    res.status(204).send();
+    // Process all fairy tale data
+    saveAll();
+
+    console.log(taleData);
+
+    res.render('dashboard', { title: 'Express' });
 });
 
-router.get('/saveAll', function(req, res, next) {
+function saveAll() {
     // Process Characteristics
     if(taleData.contrary == "Contrari"){
         for(var i = 0; i++; i < 4){
@@ -220,11 +227,11 @@ router.get('/saveAll', function(req, res, next) {
     }
 
     // Process Powers
-     for(var i = 0; i++; i < 3) {
+    for(var i = 0; i++; i < 3) {
         if(taleData.gamesStatus[i] == "Win"){
             taleData.finalPowers.push(taleData.powers[i])
         }
-     }
+    }
 
     var data = JSON.stringify(taleData, null, 2);
 
@@ -232,12 +239,7 @@ router.get('/saveAll', function(req, res, next) {
         if (err) throw err;
         console.log('Data written to file');
     });
-
-    res.render('/dashboard', { title: 'Express' });
-
-});
-
-
+}
 
 
 module.exports = router;
