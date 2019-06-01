@@ -8,6 +8,7 @@ block content
             p.pText Adesso siamo arrivati alla scelta delle possibili ambientazioni per la vostra fiaba. Di seguito indicate per ogni punto un possibile luogo (come da esempio al punto 1.).
             form#placesForm.wheelform(method='POST', action='/start/registerPlaces')
                 .block
+                .blockd
                     label 1.
                     input(type='text' value='Foresta', required='',readonly='', name='place1')
                 .block
@@ -48,7 +49,7 @@ block content
                 oldrotation = 0,
                 picked = 100000,
                 oldpick = [],
-                color = d3.scale.category20();//category20c()
+                color = d3.scale.category20();
 
             var data = [
                 {

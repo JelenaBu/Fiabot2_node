@@ -15,7 +15,7 @@ var taleData = {
     finalPlace : 0,
     tests: [],
     finalTests : []
-}
+};
 
 var caratteristiche = ["Bello", "Muscoloso", "Pigro", "Umile", "Avaro", "Sensibile", "Caritatevole", "Debole", "Lento", "Intelligente", "Impaziente", "Presuntuoso", "Simpatico", "Prudente", "Generoso"];
 var contrari = ["Brutto", "Gracile", "Attivo", "Altezzoso", "Generoso", "Indifferente", "Egoista", "Forte", "Veloce", "Ignorante", "Paziente", "Modesto", "Antipatics", "Audace", "Volgare"];
@@ -44,6 +44,13 @@ router.get('/acceleration', function(req, res, next) {
 router.get('/snake', function(req, res, next) {
     res.render('snake', { title: 'Express' });
 });
+
+router.get('/cubes', function(req, res, next) {
+    res.render('cubes', { title: 'Express' });
+});
+
+/* Save Characters */
+
 
 /* Save Characteristics for characters */
 router.post('/registerCharacteristics', function(req, res, next) {

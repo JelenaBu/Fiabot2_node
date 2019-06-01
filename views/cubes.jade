@@ -1,0 +1,16 @@
+extends layout
+block content
+    body.bgimg6
+        p.carTitle2 Personaggi
+            p.textAllign
+                | In questa prima fase dovrete creare il vostro protagonista! br Lanciate il dato per scoprire quale sarà il volto del vostro personaggio. Dopodiche fatelo di nuovo altre due volte per scoprire quale saranno corpo e gambe!
+            .scene
+                #cube.cube
+                    .side.back
+                    .side.left
+                    .side.right
+                    .side.top
+                    .side.bottom
+                    .side.front
+                button.mybtnstart(type='button', onclick='rollCube()') Lancia
+

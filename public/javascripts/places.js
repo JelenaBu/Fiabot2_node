@@ -25,6 +25,12 @@ $(placesForm).submit(function(event) {
     })
 });
 
+function enableNext() {
+    // Enable next button
+    $('button.nextButton').prop('disabled', false);
+
+}
+
 function registerFinalPlace(place){
     console.log("Luogo: " + place)
 

@@ -50,6 +50,12 @@ div {
   color: white;
 }
 
+.firstPar {
+  /*color: white;*/
+  /*text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;*/
+  bottom: 200px;
+}
+
 .mybtn:hover {background: #bfbfbf;}
 
 .fiabot {
@@ -73,6 +79,7 @@ div {
   display: inline-block;
   color: black;
   font-weight: bold;
+  border-radius: 6px;
 }
 .mybtnstart:hover {background: #bfbfbf;}
 
@@ -183,10 +190,29 @@ div {
 }
 
 .bgimg3 {
+
   background-image: url('../images/d.png');
   background-position: center;
   background-repeat: no-repeat;
   /*background-size: cover;*/
+  height: 100%;
+}
+.bgimg4 {
+  background-image: url('../images/e.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.bgimg5 {
+  background-image: url('../images/f.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.bgimg6 {
+  background-image: url('../images/g.png');
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
 }
 
@@ -235,14 +261,7 @@ canvas {
 .wrapper2 {
   display: flex;
   justify-content: center;
-  transform: translateX(0%);
-}
-
-.bgimg3 {
-  background-image: url('../images/e.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
+  transform: translateX(20%);
 }
 
 .carTitle {
@@ -250,6 +269,15 @@ canvas {
   text-align: center;
   font-size: 70px;
   color: #ff99ff;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+
+.carTitle2 {
+  font-family: "Comic Sans MS";
+  text-align: center;
+  font-size: 70px;
+  color: #33d6ff;
   font-weight: bold;
   text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }
