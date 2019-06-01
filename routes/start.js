@@ -14,7 +14,12 @@ var taleData = {
     places : [],
     finalPlace : 0,
     tests: [],
-    finalTests : []
+    finalTests : [],
+    students : "",
+    teachingClass : "",
+    professor : "",
+    title : "",
+    other : ""
 };
 
 var caratteristiche = ["Bello", "Muscoloso", "Pigro", "Umile", "Avaro", "Sensibile", "Caritatevole", "Debole", "Lento", "Intelligente", "Impaziente", "Presuntuoso", "Simpatico", "Prudente", "Generoso"];
@@ -43,6 +48,10 @@ router.get('/acceleration', function(req, res, next) {
 
 router.get('/snake', function(req, res, next) {
     res.render('snake', { title: 'Express' });
+});
+
+router.get('/user', function(req, res, next) {
+    res.render('user', { title: 'Express' });
 });
 
 /* Save Characters */
@@ -184,7 +193,19 @@ router.post('/registerFinalTests', function(req, res, next) {
     // TODO: not done yet
 });
 
+router.post('/registerUsers', function(req, res, next) {
+    var request = req.body;
+    console.log(request)
+    // console.log(request['field1'])
+    taleData.students = request['field1'];
+    taleData.teachingClass = request['field2'];
+    taleData.professor = request['field3'];
+    taleData.title = request['field4'];
+    taleData.other = request['field5'];
 
+    // console.log(taleData);
+    res.status(204).send();
+});
 
 router.get('/saveAll', function(req, res, next) {
     // Process Characteristics

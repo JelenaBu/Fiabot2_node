@@ -1,0 +1,39 @@
+extends layout
+block content
+    body.bgimg5
+        p.userTitle Dati personali
+        .form-style-3
+            form(method='POST' action='/start/registerUsers')
+                fieldset
+                    legend Personali
+                    label(for='field1')
+                        span
+                            | Nomi
+                            span.required *
+                        input.input-field(type='text', name='field1', value='')
+                    label(for='field2')
+                        span
+                            | Classe
+                            span.required *
+                        input.input-field(type='text', name='field2', value='')
+                    label(for='field3')
+                        span
+                            | Docente
+                            span.required *
+                        input.input-field(type='text', name='field3', value='')
+                fieldset
+                    legend Storia
+                    label(for='field4')
+                        span
+                            | Titolo
+                            span.required *
+                        input.input-field(type='text', name='field4', value='')
+                    label(for='field5')
+                        span
+                            | Appunti
+                        textarea.textarea-field(name='field5')
+                    label
+                        span
+                        input(type='submit', value='Conferma')
+    form(action='/start/saveAll', method='GET')
+            button.nextButton(type='submit') Fine
