@@ -72,7 +72,7 @@ block content
         .column
           #dice-side-1.dice &#927
         .column2
-          button.dice-roll(type='button', disabled='', , onclick='rollDice()') Lancia la moneta
+          button.dice-roll.confirm(type='button', disabled='', , onclick='rollDice()') Lancia la moneta
           h2#status Avete ottenuto....
     form.nextButton(action='/start/powers', method='GET')
                           button.nextButton(type='submit', disabled='') Avanti
