@@ -45,10 +45,11 @@ html, body {
     height: var(--size-px);
     /*background-color: #333;*/
     /*opacity: .95;*/
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
+/* Bodies */
 .back {
     transform: translateZ(var(--transform)) rotateX(180deg);
     background-image: url('../images/cubes/corpo1.png');
@@ -79,6 +80,67 @@ html, body {
     background-image: url('../images/cubes/corpo6.png');
 }
 
+/* Faces */
+.back1 {
+    transform: translateZ(var(--transform)) rotateX(180deg);
+    background-image: url('../images/cubes/testa1.jpg');
+}
+
+.left1 {
+    transform: translateX(var(--transformMinus)) rotateY(90deg);
+    background-image: url('../images/cubes/testa2.jpg');
+}
+
+.right1 {
+    transform: translateX(var(--transform)) rotateY(90deg);
+    background-image: url('../images/cubes/testa3.jpg');
+}
+
+.top1 {
+    transform: translateY(var(--transformMinus)) rotateX(90deg);
+    background-image: url('../images/cubes/testa4.jpg');
+}
+
+.bottom1 {
+    transform: translateY(var(--transform)) rotateX(270deg);
+    background-image: url('../images/cubes/testa5.jpg');
+}
+
+.front1 {
+    transform: translateZ(var(--transform));
+    background-image: url('../images/cubes/testa6.jpg');
+}
+
+/* Legs */
+.back2 {
+    transform: translateZ(var(--transform)) rotateX(180deg);
+    background-image: url('../images/cubes/gambe1.png');
+}
+
+.left2 {
+    transform: translateX(var(--transformMinus)) rotateY(90deg);
+    background-image: url('../images/cubes/gambe2.png');
+}
+
+.right2 {
+    transform: translateX(var(--transform)) rotateY(90deg);
+    background-image: url('../images/cubes/gambe3.png');
+}
+
+.top2 {
+    transform: translateY(var(--transformMinus)) rotateX(90deg);
+    background-image: url('../images/cubes/gambe4.png');
+}
+
+.bottom2 {
+    transform: translateY(var(--transform)) rotateX(270deg);
+    background-image: url('../images/cubes/gambe5.png');
+}
+
+.front2 {
+    transform: translateZ(var(--transform));
+    background-image: url('../images/cubes/gambe6.png');
+}
 @keyframes rotate {
     0% { transform: rotateX(0)}
     12.5% { transform: rotateY(90deg)}

@@ -31,6 +31,14 @@ router.get('/', function(req, res, next) {
     res.render('characters', { title: 'Express' });
 });
 
+router.get('/characters2', function(req, res, next) {
+    res.render('characters2', { title: 'Express' });
+});
+
+router.get('/characters3', function(req, res, next) {
+    res.render('characters3', { title: 'Express' });
+});
+
 router.get('/characteristics', function(req, res, next) {
     res.render('characteristics', { title: 'Express' });
 });
@@ -54,6 +62,7 @@ router.get('/snake', function(req, res, next) {
 router.get('/user', function(req, res, next) {
     res.render('user', { title: 'Express' });
 });
+
 router.get('/dashboard', function(req, res, next) {
     res.render('dashboard', { title: 'Express' });
 });
