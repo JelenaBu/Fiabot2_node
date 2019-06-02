@@ -113,8 +113,21 @@ div {
 .textAllign {
   text-align: center;
 }
+.centerElement {
+  display: flex;
+  justify-content: center;
+}
+
+.twocolumn {
+  /*float: left;*/
+  width: 30%;
+  padding: 15px;
+  /*display: inline-block;*/
+  /*justify-content: space-around;*/
+}
 
 .wrapper {
+  text-align: center;
   display: flex;
   justify-content: center;
 }
@@ -149,6 +162,7 @@ div {
 
 .dice {
   width: 120px;
+  height: 120px;
   float: left;
   content: url("../images/moneta.png");
   border: 1px solid black;
@@ -288,4 +302,35 @@ canvas {
   color: white;
   font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.newGamebtn{
+  border: solid;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+  color: #b3ffb3;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.confirm{
+  border: solid;
+  background-color: #ff99ff;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+}
+.carTitle4 {
+  font-family: "Comic Sans MS";
+  text-align: center;
+  font-size: 70px;
+  color: #33adff;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }

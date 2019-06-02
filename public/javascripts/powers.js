@@ -90,14 +90,16 @@ function checkstatusAcceleration(score) {
 function checkstatusSnake(score) {
     if (score >= 160){
         console.log("Score obtained: " + score + "therefore, you " + "WINNED");
+        alert("CONGRATULAZIONI! HAI VINTOO!!");
         updateGameStatus("Win");
     }
     else {
         console.log("Score obtained: " + score + "therefore, you " + "FAILED");
+        alert("MI DISPIACE! PURTROPPO HAI PERSO!!");
         updateGameStatus("Fail");
     }
     // Enable next button
     $('button.nextButton').prop('disabled', false);
     //Disable new game button
-    $('button.newGameSnake').prop('disabled', true);
+    $('button.newGame').prop('disabled', true);
 }

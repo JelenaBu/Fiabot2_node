@@ -3,6 +3,7 @@ var router = express.Router();
 // For json file
 'use strict';
 const fs = require('fs');
+var taleFile = require('../taleData.json');
 
 var taleData = {
     characteristics : [],
@@ -198,7 +199,7 @@ router.post('/registerFinalTests', function(req, res, next) {
 
 router.post('/registerUsers', function(req, res, next) {
     var request = req.body;
-    console.log(request)
+    console.log(request);
     // console.log(request['field1'])
     taleData.students = request['field1'];
     taleData.teachingClass = request['field2'];
@@ -212,6 +213,10 @@ router.post('/registerUsers', function(req, res, next) {
     console.log(taleData);
 
     res.render('dashboard', { title: 'Express' });
+});
+
+router.get('/jsonTaleData', function(req, res, next) {
+    res.json(taleData);
 });
 
 function saveAll() {

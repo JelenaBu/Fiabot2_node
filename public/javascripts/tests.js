@@ -29,6 +29,7 @@ function enableNext() {
 
 }
 
+
 var testList = [];
 var testListFinal = [];
 var nTests = 0;
@@ -83,6 +84,6 @@ function updateEsito(index) {
 
     if (testListFinal.length == nTests){
         enableNext();
-        // container.on("click", "#");
+        container.on("click", "#");
     }
 }

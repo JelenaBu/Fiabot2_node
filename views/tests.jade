@@ -3,39 +3,37 @@ block content
     body.bgimg3
         p.carTitle Prove
         #chart
-            h1
-        div
-            p.textAllign Siamo arrivati alla fine! A questo punto determinerete quante e quali prove dovrà affrontare il vostro protagonista. Di seguito indicate per ogni punto una possibile prova (come da esempio al punto 1.).
-            br
-            div.wheelform2
-                form#testsForm(method='POST', action='/start/registerTests')
-                    .block
-                        label 1.
-                        input(type='text' value='Risolvere un indovinello', required='',readonly='', name='test1', size='30')
-                    .block
-                        label 2.
-                        input(type='text', required='', name='test2', size='30')
-                    .block
-                        label 3.
-                        input(type='text', required='', name='test3', size='30')
-                    .block
-                        label 4.
-                        input(type='text', required='', name='test4', size='30')
-                    .block
-                        label 5.
-                        input(type='text', required='', name='test5', size='30')
-                    .block
-                        label 6.
-                        input(type='text', required='', name='test6', size='30')
-                    .block
-                        label 7.
-                        input(type='text', required='', name='test7', size='30')
-                    .block
-                        label 8.
-                        input(type='text', required='', name='test8', size='30')
-                    br
-                    input#confirmTests.wheelform2(type='submit', value='Conferma')
-            p#esito
+        p.textAllign Siamo arrivati alla fine! A questo punto determinerete quante e quali prove dovrà affrontare il vostro protagonista. Di seguito indicate per ogni punto una possibile prova (come da esempio al punto 1.).
+        br
+        br
+        div.wheelform2
+            form#testsForm(method='POST', action='/start/registerTests')
+                .block
+                    label 1.
+                    input(type='text' value='Risolvere un indovinello', required='',readonly='', name='test1', size='30')
+                .block
+                    label 2.
+                    input(type='text', required='', name='test2', size='30')
+                .block
+                    label 3.
+                    input(type='text', required='', name='test3', size='30')
+                .block
+                    label 4.
+                    input(type='text', required='', name='test4', size='30')
+                .block
+                    label 5.
+                    input(type='text', required='', name='test5', size='30')
+                .block
+                    label 6.
+                    input(type='text', required='', name='test6', size='30')
+                .block
+                    label 7.
+                    input(type='text', required='', name='test7', size='30')
+                .block
+                    label 8.
+                    input(type='text', required='', name='test8', size='30')
+                br
+                input#confirmTests.confirm(type='submit', value='Conferma')
 
-            form(action='/start/tests2', method='GET')
-                button.nextButton(type='submit', disabled='') Avanti 1/2
+        form(action='/start/tests2', method='GET')
+            button.nextButton(type='submit', disabled='') Avanti 1/2

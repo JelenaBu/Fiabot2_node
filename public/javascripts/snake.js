@@ -26,10 +26,9 @@ var dx = 10;
 var dy = 0;
 // Get the canvas element
 const gameCanvasSnake = document.getElementById("gameCanvasSnake");
-// Return a two dimensional drawing context
-const ctx = gameCanvasSnake.getContext("2d");
+
 // Create the first food location
-createFood();
+// createFood();
 // Call changeDirection whenever a key is pressed
 document.addEventListener("keydown", changeDirection);
 /**
@@ -59,6 +58,8 @@ function main() {
  * draw a border around it
  */
 function clearCanvas() {
+    // Return a two dimensional drawing context
+    const ctx = gameCanvasSnake.getContext("2d");
     //  Select the colour to fill the drawing
     ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
     //  Select the colour for the border of the canvas
@@ -72,6 +73,8 @@ function clearCanvas() {
  * Draw the food on the canvas
  */
 function drawFood() {
+    // Return a two dimensional drawing context
+    const ctx = gameCanvasSnake.getContext("2d");
     ctx.fillStyle = FOOD_COLOUR;
     ctx.strokestyle = FOOD_BORDER_COLOUR;
     ctx.fillRect(foodX, foodY, 10, 10);
@@ -152,6 +155,8 @@ function drawSnake() {
  * @param { object } snakePart - The coordinates where the part should be drawn
  */
 function drawSnakePart(snakePart) {
+    // Return a two dimensional drawing context
+    const ctx = gameCanvasSnake.getContext("2d");
     // Set the colour of the snake part
     ctx.fillStyle = SNAKE_COLOUR;
     // Set the border colour of the snake part
