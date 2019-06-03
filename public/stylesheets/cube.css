@@ -35,8 +35,13 @@ html, body {
 }
 
 .animation {
-    animation: rotate 1s ease-in-out infinite;
+    animation: rotate 1s linear infinite;
+    /*animation: rotate 1s ease-in-out infinite;*/
 }
+
+/*.stopanimation {*/
+    /*animation-play-state: paused;*/
+/*}*/
 
 .side {
     border-style: solid;

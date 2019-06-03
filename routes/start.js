@@ -203,6 +203,8 @@ router.post('/registerTests', function(req, res, next) {
 });
 
 router.post('/registerFinalTests', function(req, res, next) {
+    var request = req.body;
+    // console.log(request)
     // TODO: not done yet
 });
 
