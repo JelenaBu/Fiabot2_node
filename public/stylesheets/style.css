@@ -118,6 +118,14 @@ div {
   display: flex;
   justify-content: center;
 }
+.centerElementDescription {
+  border-color: black;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 22px;
+
+}
 
 .twocolumn {
   /*float: left;*/
