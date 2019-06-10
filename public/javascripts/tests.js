@@ -46,30 +46,73 @@ function populateTests() {
     })
 }
 
-function rollDice2 () {
+// function rollDice2 () {
+//     populateTests();
+//
+//     const status = document.getElementById( 'status' );
+//
+//     var side1 = Math.floor( Math.random() * 6 ) + 1;
+//
+//     if(side1 % 2 == 0){
+//         side1 = 1;
+//     } else {
+//         side1 = 3;
+//     }
+//
+//     nTests = side1;
+//
+//     status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+//
+//     // Disable this button
+//     $('button.dice-roll').prop('disabled', true);
+//
+//     // Enable wheel spin
+//     container.on("click", spin);
+//     container.select("circle").style({"fill": "#ffff99"});
+// }
+
+jQuery(document).ready(function($){
     populateTests();
 
     const status = document.getElementById( 'status' );
+    var side1;
+    $('#coin2').on('click', function(){
+        var flipResult = Math.random();
+        $('#coin2').removeClass();
+        setTimeout(function(){
+            if(flipResult <= 0.5){
+                $('#coin2').addClass('heads');
+                side1 = 1;
+                console.log('it is head');
+            }
+            else{
+                $('#coin2').addClass('tails');
+                side1 = 3;
+                console.log('it is tails');
+            }
 
-    var side1 = Math.floor( Math.random() * 6 ) + 1;
+            nTests = side1;
+            status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+            var coinData = {
+                contrary : side1
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/start/registerCharacteristicsType',
+                data: coinData
+            }).done(function(response) {
+                status.innerHTML = 'Avete ottenuto "' + side1 + '".';
 
-    if(side1 % 2 == 0){
-        side1 = 1;
-    } else {
-        side1 = 3;
-    }
+                // Enable next button
+                $('button.nextButton').prop('disabled', false);
+            });
+            // Enable wheel spin
+            container.on("click", spin);
+            container.select("circle").style({"fill": "#ffff99"});
 
-    nTests = side1;
-
-    status.innerHTML = 'Avete ottenuto "' + side1 + '".';
-
-    // Disable this button
-    $('button.dice-roll').prop('disabled', true);
-
-    // Enable wheel spin
-    container.on("click", spin);
-    container.select("circle").style({"fill": "#ffff99"});
-}
+        }, 100);
+    });
+});
 
 function updateEsito(index) {
     testListFinal.push(testList[index]);

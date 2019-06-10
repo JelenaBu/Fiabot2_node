@@ -1,35 +1,35 @@
 
-function rollDice () {
-
-    const status = document.getElementById( 'status' );
-
-    var side1 = Math.floor( Math.random() * 6 ) + 1;
-
-    if(side1 % 2 == 0){
-        side1 = "Uguale";
-    } else {
-        side1 = "Contrari";
-    }
-
-    var coinData = {
-        contrary : side1
-    };
-
-    $.ajax({
-        type: 'POST',
-        url: '/start/registerCharacteristicsType',
-        data: coinData
-    }).done(function(response) {
-        status.innerHTML = 'Avete ottenuto "' + side1 + '".';
-
-        // Disable this button
-        $('button.dice-roll').prop('disabled', true);
-
-        // Enable next button
-        $('button.nextButton').prop('disabled', false);
-    });
-
-}
+// function rollDice () {
+//
+//     const status = document.getElementById( 'status' );
+//
+//     var side1 = Math.floor( Math.random() * 6 ) + 1;
+//
+//     if(side1 % 2 == 0){
+//         side1 = "Uguale";
+//     } else {
+//         side1 = "Contrari";
+//     }
+//
+//     var coinData = {
+//         contrary : side1
+//     };
+//
+//     $.ajax({
+//         type: 'POST',
+//         url: '/start/registerCharacteristicsType',
+//         data: coinData
+//     }).done(function(response) {
+//         status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+//
+//         // Disable this button
+//         $('button.dice-roll').prop('disabled', true);
+//
+//         // Enable next button
+//         $('button.nextButton').prop('disabled', false);
+//     });
+//
+// }
 
 // Allow to select only 4 characteristics
 var charlimit = 4;
@@ -76,5 +76,41 @@ $(charForm).submit(function(event) {
         // Enable coin button
         $('button.dice-roll').prop('disabled', false);
     })
+});
+
+jQuery(document).ready(function($){
+    const status = document.getElementById( 'status' );
+    var side1;
+    $('#coin').on('click', function(){
+        var flipResult = Math.random();
+        $('#coin').removeClass();
+        setTimeout(function(){
+            if(flipResult <= 0.5){
+                $('#coin').addClass('heads');
+                side1 = "Uguale";
+                console.log('it is head');
+            }
+            else{
+                $('#coin').addClass('tails');
+                side1 = "Contrari";
+                console.log('it is tails');
+            }
+            status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+            var coinData = {
+                contrary : side1
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/start/registerCharacteristicsType',
+                data: coinData
+            }).done(function(response) {
+                status.innerHTML = 'Avete ottenuto "' + side1 + '".';
+
+                // Enable next button
+                $('button.nextButton').prop('disabled', false);
+            });
+
+        }, 100);
+    });
 });
 

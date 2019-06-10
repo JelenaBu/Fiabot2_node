@@ -66,13 +66,15 @@ block content
       br
       input#coinButton.cursor(type='submit', value='Conferma')
     p#selectedChar.textAllign
-    p.textAllign Adesso scoprite se otterrete le caratteristiche che avete selezionato oppure i loro contrari:
+    p.textAllign Adesso scoprite se otterrete le caratteristiche che avete selezionato (testa) oppure i loro contrari (croce):
     .div
       .wrapper
         .column
-          #dice-side-1.dice &#927
+          #coin
+            .side-a
+            .side-b
         .column2
-          button.dice-roll.confirm(type='button', disabled='', , onclick='rollDice()') Lancia la moneta
+          p Lancia la moneta cliccandoci sopra.
           h2#status Avete ottenuto....
     form.nextButton(action='/start/powers', method='GET')
                           button.nextButton(type='submit', disabled='') Avanti
