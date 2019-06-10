@@ -93,19 +93,7 @@ jQuery(document).ready(function($){
 
             nTests = side1;
             status.innerHTML = 'Avete ottenuto "' + side1 + '".';
-            var coinData = {
-                contrary : side1
-            };
-            $.ajax({
-                type: 'POST',
-                url: '/start/registerCharacteristicsType',
-                data: coinData
-            }).done(function(response) {
-                status.innerHTML = 'Avete ottenuto "' + side1 + '".';
 
-                // Enable next button
-                $('button.nextButton').prop('disabled', false);
-            });
             // Enable wheel spin
             container.on("click", spin);
             container.select("circle").style({"fill": "#ffff99"});
@@ -128,5 +116,15 @@ function updateEsito(index) {
     if (testListFinal.length == nTests){
         enableNext();
         container.on("click", "#");
+        var totalData = {
+            finalTests : testListFinal
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/start/registerFinalTests',
+            data: totalData
+        }).done(function(response) {
+            console.log("Successfully sent to server.")
+        });
     }
 }

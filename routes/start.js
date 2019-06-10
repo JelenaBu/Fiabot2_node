@@ -189,7 +189,7 @@ router.get('/getAllTest', function(req, res, next) {
 router.post('/registerTests', function(req, res, next) {
     var request = req.body;
     // console.log(request)
-    console.log(taleData)
+    // console.log(taleData)
 
     Object.keys(request).forEach(function(key,index) {
         // key: the name of the object key
@@ -198,14 +198,17 @@ router.post('/registerTests', function(req, res, next) {
         console.log('this is the key (' + key + ') . Value: ' + request[key]);
         taleData.tests.push(request[key]);
     });
-    console.log(taleData);
+    // console.log(taleData);
     res.status(204).send();
 });
 
 router.post('/registerFinalTests', function(req, res, next) {
     var request = req.body;
     // console.log(request)
-    // TODO: not done yet
+    // console.log(request.finalTests[]);
+    // console.log(request['finalTests[]']);
+    taleData.finalTests = request['finalTests[]'];
+    res.status(204).send();
 });
 
 router.post('/registerUsers', function(req, res, next) {
